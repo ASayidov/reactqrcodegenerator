@@ -19,8 +19,10 @@ function Main() {
 
   return (
     <div>
-      <div className="imputSec">
+      <h1 className="themeText">React QRCode Generator</h1>
+      <div className="inputSec">
         <input
+          autoFocus
           type="text"
           placeholder="Enter text..."
           className="placeInput"
@@ -28,9 +30,6 @@ function Main() {
             setTemp(e.target.value);
           }}
         />
-      </div>
-      <div className="output">
-        <img src={qrCode} alt="qr code iamge" />
       </div>
       <div className="buttonsArea">
         <button className="generateBtn" onClick={handleGenerate}>
@@ -42,11 +41,15 @@ function Main() {
           </button>
         </a>
         <input
+          className="color"
           type="color"
           onChange={(e) => {
             setBgColor(e.target.value.substring(1));
           }}
         />
+      </div>
+      <div className="output">
+        <img src={qrCode} alt="" />
       </div>
     </div>
   );
