@@ -13,9 +13,41 @@ function Main() {
     );
   }, [word, bgColor]);
 
+  function handleGenerate() {
+    setWord(temp);
+  }
+
   return (
     <div>
-      <h1>Salom</h1>
+      <div className="imputSec">
+        <input
+          type="text"
+          placeholder="Enter text..."
+          className="placeInput"
+          onChange={(e) => {
+            setTemp(e.target.value);
+          }}
+        />
+      </div>
+      <div className="output">
+        <img src={qrCode} alt="qr code iamge" />
+      </div>
+      <div className="buttonsArea">
+        <button className="generateBtn" onClick={handleGenerate}>
+          Generate
+        </button>
+        <a href={qrCode} download="QRCode">
+          <button className="downloadBtn" type="button">
+            Download
+          </button>
+        </a>
+        <input
+          type="color"
+          onChange={(e) => {
+            setBgColor(e.target.value.substring(1));
+          }}
+        />
+      </div>
     </div>
   );
 }
