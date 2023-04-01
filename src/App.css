@@ -43,6 +43,7 @@ body {
 
 .color {
   padding: 15px 10px;
+  height: 55px;
   font-size: 20px;
 }
 .generateBtn {
